@@ -27,11 +27,6 @@ describe('mortgage calculator interest rate feature', () => {
             })
         })
     })
-
-    // it('changes the loan program to 15 year fixed', () => {
-
-    // })
-    
     
     
     it('checks that an error message appears when entering an interest rate greater than 100%', () => {
