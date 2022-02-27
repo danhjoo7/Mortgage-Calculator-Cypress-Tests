@@ -6,7 +6,7 @@ describe('mortgage calculator interest rate feature', () => {
         cy.contains('Interest rate').should('be.visible')
     })
 
-    it('changes the interest rate to 4% and increases the monthly payment amount', () => {
+    it('changes the interest rate to 4% and increases the P&I and monthly payment amount', () => {
         
         const newInterestRate = '4'
 
@@ -21,7 +21,10 @@ describe('mortgage calculator interest rate feature', () => {
             cy.get('#zmm-calc-payment > div.Flex-c11n-8-50-1__sc-n94bjd-0.biymia > div.Flex-c11n-8-50-1__sc-n94bjd-0.dRwhfE > div.StyledTabs-c11n-8-50-1__sc-mmagv-0.zgmi__sc-1tnoe56-0.ewpSYh').click()
             cy.get('#rate').should('have.value', newInterestRate)
 
-            cy.get('#breakdown-panel > div > div > div > svg > g > g:nth-child(1) > g > text.arc-label-value').text().should('be.gt', defaultPrincipalInterest)
+            cy.get('#breakdown-panel > div > div > div > svg > g > g:nth-child(1) > g > text.arc-label-value').should(newValue => {
+                const newPrincipalInterest = newValue.text()
+                expect(newPrincipalInterest).to.not.equal(defaultPrincipalInterest)
+            })
         })
     })
 
