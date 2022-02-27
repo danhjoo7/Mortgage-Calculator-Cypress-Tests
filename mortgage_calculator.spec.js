@@ -6,24 +6,25 @@ describe('mortgage calculator interest rate feature', () => {
         cy.contains('Interest rate').should('be.visible')
     })
 
-    it('changes the interest rate to 4% and increases the P&I and monthly payment amount', () => {
+    it('manually changes the interest rate to 4%', () => {
         
         const newInterestRate = '4'
 
         //erase the default interest rate and type the new one in
         cy.get('#rate').clear().type(`${newInterestRate}`)
 
-        //comparing the old P&I to the new P&I after the interest rate has been changed
+        //checking that the P&I value has been changed after putting in the new interest rate 
         cy.get('#breakdown-panel > div > div > div > svg > g > g:nth-child(1) > g > text.arc-label-value').then(value => {
-            const defaultPrincipalInterest = value.text()
+            const oldPrincipalInterest = value.text()
 
              //click outside the input box to implement the interest rate change; also, make sure the interest rate hasn't changed after clicking outside the box
             cy.get('#zmm-calc-payment > div.Flex-c11n-8-50-1__sc-n94bjd-0.biymia > div.Flex-c11n-8-50-1__sc-n94bjd-0.dRwhfE > div.StyledTabs-c11n-8-50-1__sc-mmagv-0.zgmi__sc-1tnoe56-0.ewpSYh').click()
             cy.get('#rate').should('have.value', newInterestRate)
 
+            //making sure that new P&I is not the same as the old one
             cy.get('#breakdown-panel > div > div > div > svg > g > g:nth-child(1) > g > text.arc-label-value').should(newValue => {
                 const newPrincipalInterest = newValue.text()
-                expect(newPrincipalInterest).to.not.equal(defaultPrincipalInterest)
+                expect(newPrincipalInterest).to.not.equal(oldPrincipalInterest)
             })
         })
     })
