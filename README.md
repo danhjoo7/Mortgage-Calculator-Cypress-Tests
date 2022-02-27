@@ -1,5 +1,5 @@
 # Mortgage-Calculator-Cypress-Tests
-Cypress tests for Zillow's mortgage calculator 
+Cypress tests for interest rate feature on Zillow's mortgage calculator 
 
 ## Running the tests
 
