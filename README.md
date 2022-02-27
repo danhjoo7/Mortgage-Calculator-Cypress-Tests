@@ -1,17 +1,17 @@
 # Mortgage-Calculator-Cypress-Tests
-Cypress tests for interest rate feature on Zillow's mortgage calculator 
+Cypress tests for the interest rate feature on Zillow's mortgage calculator 
 
 ## Running the tests
 
    Here are the steps to run the tests on the command line:
    
-   1) Assuming you already have npm as your package manager, and have installed cypress, navigate to your integration directory within your cypress directory
+   1) Assuming you already have npm as your package manager and have installed cypress, navigate to your integration directory within your cypress directory
 
       `{User}/cypress/integration`
       
    2) Clone this repo within the integration directory with the command below 
 
-      `https://github.com/danhjoo7/Mortgage-Calculator-Cypress-Tests.git`
+      `git clone https://github.com/danhjoo7/Mortgage-Calculator-Cypress-Tests.git`
       
    3) Navigate to your root directory 
    4) Run the tests with this command 
