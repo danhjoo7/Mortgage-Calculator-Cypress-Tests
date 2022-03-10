@@ -25,7 +25,7 @@ Cypress tests for the interest rate feature on Zillow's mortgage calculator
 ## Considerations for the future
 
 One thing to consider moving forward is the type of selectors we use when writing tests. Currently, some elements are being selected through a mix of selectors; it would be
-in our best interest to use id's since they are the most efficient of all the selectors. Using id's would speed up the process of grabbing elements and subsequently make the tests run faster; this is important our tests scale. The implication of this would be that during development, id's would have be to created for html elements.
+in our best interest to use id's since they are the most efficient of all the selectors. Using id's would speed up the process of grabbing elements and subsequently make the tests run faster; this is important as our tests scale. The implication of this would be that during development, id's would have be to created for html elements.
 
 
 
